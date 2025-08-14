@@ -4,13 +4,6 @@ import { useState } from 'react'
 import { Star, ShoppingCart, Heart, Truck, Shield, RotateCcw, Minus, Plus } from 'lucide-react'
 import Link from 'next/link'
 
-// Add this function to fix static export build
-export async function generateStaticParams() {
-  // Static list of product IDs; can fetch dynamically if needed
-  const productIds = ['1', '2', '3', '4']
-  return productIds.map((id) => ({ id }))
-}
-
 export default function ProductPage({ params }: { params: { id: string } }) {
   const [selectedSize, setSelectedSize] = useState('')
   const [selectedColor, setSelectedColor] = useState('')
